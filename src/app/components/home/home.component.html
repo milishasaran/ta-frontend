@@ -1,0 +1,14 @@
+<div class="main-panel">
+  <div
+    infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    [infiniteScrollContainer]="'.main-panel'"
+    [fromRoot]="true"
+    (scrolled)="onScroll()"
+  >
+    {{ news | json }}
+
+    {{ weather | json }}
+  </div>
+</div>
