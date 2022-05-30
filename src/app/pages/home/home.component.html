@@ -1,5 +1,11 @@
-<div class="main-panel">
-  <div
+<div class="py-6 px-8 md:px-20 bg-slate-100">
+  <news-navbar></news-navbar>
+  <news-weather></news-weather>
+  <news-hot-news></news-hot-news>
+  <div class="mt-10">
+    <news-latest-news></news-latest-news>
+  </div>
+  <!-- <div
     infiniteScroll
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="50"
@@ -10,5 +16,5 @@
     {{ news | json }}
 
     {{ weather | json }}
-  </div>
+  </div> -->
 </div>
