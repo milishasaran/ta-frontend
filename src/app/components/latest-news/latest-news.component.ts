@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { News } from 'src/app/interfaces/news';
+import { GetdataService } from 'src/app/services/getdata.service';
 
 @Component({
   selector: 'news-latest-news',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./latest-news.component.css'],
 })
 export class LatestNewsComponent implements OnInit {
-  constructor() {}
+  latestNews: News[] = [];
+  constructor(private data: GetdataService) {}
 
-  ngOnInit(): void {}
-
-  latestNews = new Array(5).fill(1);
+  ngOnInit() {
+    this.data.getNews().subscribe(({ articles }) => {
+      console.log({ articles });
+      this.latestNews = articles;
+    });
+  }
 }

@@ -16,6 +16,8 @@ import { HotNewsComponent } from './components/hot-news/hot-news.component';
 import { LatestNewsCardComponent } from './components/latest-news-card/latest-news-card.component';
 import { LatestNewsComponent } from './components/latest-news/latest-news.component';
 import { WeatherComponent } from './components/weather/weather.component';
+import { TimePipe } from './pipes/time.pipe';
+import { DayPipe } from './pipes/day.pipe';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { WeatherComponent } from './components/weather/weather.component';
     LatestNewsCardComponent,
     LatestNewsComponent,
     WeatherComponent,
+    TimePipe,
+    DayPipe,
   ],
   imports: [
     BrowserModule,
