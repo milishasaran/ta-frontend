@@ -1,4 +1,4 @@
-<div class="flex justify-between my-4 w-full">
+<!-- <div class="flex justify-between my-4 w-full">
   <div *ngFor="let item of weather; let i = index">
     <div
       *ngIf="i < 5"
@@ -11,16 +11,43 @@
       <h3 class="text-xs font-bold text-center">{{ item.temp.day }} &#8451;</h3>
     </div>
   </div>
-</div>
+</div> -->
 
-<!-- <div class="md:flex flex-row my-4">
-  <div *ngFor="let item of weather; let i = index">
-    <div class="flex flex-row p-4 bg-slate-100 rounded-2xl space-y-4 w-fit">
-      <h3 class="text-xs font-bold">{{ item.dt | date: "EEE" }}</h3>
-      <div class="flex justify-center">
-        <img src="../../../assets/icons/sun.svg" alt="sun" class="" />
-      </div>
-      <h3 class="text-xs font-bold">{{ item.temp }} &#8451;</h3>
+<div>
+  <h1 class="text-blue-500 text-3xl font-bold mb-8">
+    {{ currentDate | date: "EEEE, MMMM d y" }}
+  </h1>
+  <div
+    class="flex justify-between bg-white rounded p-[30px] box-border shadow-md shadow-slate-200"
+  >
+    <div>
+      <p class="text-[34px] font-bold">17&#176;</p>
+      <p class="text-[17px] font-bold">London, UK</p>
+    </div>
+    <div class="flex justify-center items-center">
+      <img
+        src="../../../assets/icons/sun.svg"
+        alt="weather"
+        class="h-[60px] w-[60px]"
+      />
     </div>
   </div>
-</div> -->
+
+  <div *ngFor="let item of weather; let i = index" class="">
+    <div *ngIf="i < 5" class="grid grid-cols-3 my-[22px]">
+      <p class="text-xl font-bold text-slate-500 flex items-end">
+        {{ item.dt | day }}
+      </p>
+      <span class="flex justify-center">
+        <img src="../../../assets/icons/sun.svg" alt="sun" />
+      </span>
+
+      <span class="flex space-x-2 justify-end items-end">
+        <p class="font-bold">{{ item.temp.max | number: "2.0-0" }}&#176;</p>
+        <p class="text-slate-500 font-bold">
+          {{ item.temp.min | number: "2.0-0" }}&#176;
+        </p>
+      </span>
+    </div>
+  </div>
+</div>

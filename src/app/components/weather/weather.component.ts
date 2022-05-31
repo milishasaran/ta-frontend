@@ -9,6 +9,7 @@ import { GetdataService } from 'src/app/services/getdata.service';
 })
 export class WeatherComponent implements OnInit {
   weather: Daily[] = [];
+  currentDate = new Date();
 
   constructor(private data: GetdataService) {}
 
