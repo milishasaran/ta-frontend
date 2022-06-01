@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { filter } from 'rxjs';
 import { Daily } from 'src/app/interfaces/weather';
 import { GetdataService } from 'src/app/services/getdata.service';
 
@@ -15,7 +16,6 @@ export class WeatherComponent implements OnInit {
 
   ngOnInit() {
     this.data.getWeather().subscribe(({ daily }) => {
-      console.log(daily);
       this.weather = daily;
       console.log(this.weather);
     });

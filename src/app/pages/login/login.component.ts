@@ -31,12 +31,12 @@ export class LoginComponent implements OnInit {
       next: (data: any) => {
         const { user } = data;
         const { email, id } = user;
-        window.sessionStorage.setItem('access-token', data.accessToken);
+        window.localStorage.setItem('access-token', data.accessToken);
         this.info.next({ email, id });
-        this.route.navigateByUrl('/home');
+        this.route.navigateByUrl('/');
       },
       error: (error) => {
-        window.sessionStorage.removeItem('access-token');
+        window.localStorage.removeItem('access-token');
         this.info.next(null);
       },
     });

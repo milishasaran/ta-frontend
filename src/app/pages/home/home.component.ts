@@ -15,21 +15,13 @@ export class HomeComponent implements OnInit {
   constructor(private data: GetdataService, private route: Router) {}
 
   ngOnInit() {
-    this.data.getNews().subscribe(({ articles }) => {
-      console.log({ articles });
-      this.news = articles;
-    });
-
-    this.data.getWeather().subscribe(({ daily }) => {
-      console.log({ daily });
-      this.weather = daily;
-    });
+    // this.data.getNews(this.fromDate, this.toDate).subscribe(({ articles }) => {
+    //   console.log({ articles });
+    //   this.news = articles;
+    // });
+    // this.data.getWeather().subscribe(({ daily }) => {
+    //   console.log({ daily });
+    //   this.weather = daily;
+    // });
   }
-
-  logout() {
-    window.sessionStorage.removeItem('access-token');
-    this.route.navigateByUrl('/home');
-  }
-
-  onScroll() {}
 }

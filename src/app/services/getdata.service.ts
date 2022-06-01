@@ -7,8 +7,13 @@ import { Injectable } from '@angular/core';
 export class GetdataService {
   constructor(private http: HttpClient) {}
 
-  getNews() {
-    return this.http.get<any>('http://localhost:3000/news');
+  getNews(to: string, from: string) {
+    return this.http.get<any>('http://localhost:3000/news', {
+      params: {
+        to,
+        from,
+      },
+    });
   }
 
   getWeather() {

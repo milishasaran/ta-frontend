@@ -1,19 +1,21 @@
-<!-- <div class="flex justify-between my-4 w-full">
+<div class="flex justify-between my-4 w-full md:hidden">
   <div *ngFor="let item of weather; let i = index">
     <div
       *ngIf="i < 5"
-      class="flex flex-col p-4 bg-slate-100 rounded-2xl space-y-4 md:hidden w-fit"
+      class="flex flex-col p-4 rounded-2xl space-y-4 w-fit shadow-md shadow-slate-200"
     >
       <h3 class="text-xs font-bold text-center">{{ item.dt | day }}</h3>
       <div class="flex justify-center">
         <img src="../../../assets/icons/sun.svg" alt="sun" class="" />
       </div>
-      <h3 class="text-xs font-bold text-center">{{ item.temp.day }} &#8451;</h3>
+      <h3 class="text-xs font-bold text-center">
+        {{ item.temp.day | number: "2.0-0" }} &#176;
+      </h3>
     </div>
   </div>
-</div> -->
+</div>
 
-<div>
+<div class="hidden md:block">
   <h1 class="text-blue-500 text-3xl font-bold mb-8">
     {{ currentDate | date: "EEEE, MMMM d y" }}
   </h1>
