@@ -19,6 +19,6 @@ export class AuthGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    return window.sessionStorage.getItem('access-token') ? true : false;
+    return window.localStorage.getItem('access-token') ? true : false;
   }
 }

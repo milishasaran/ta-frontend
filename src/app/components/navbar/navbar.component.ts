@@ -13,6 +13,6 @@ export class NavbarComponent implements OnInit {
 
   logout() {
     window.localStorage.removeItem('access-token');
-    this.route.navigateByUrl('/login');
+    this.route.navigateByUrl('/');
   }
 }

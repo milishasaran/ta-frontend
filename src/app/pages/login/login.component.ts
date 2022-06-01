@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
         const { email, id } = user;
         window.localStorage.setItem('access-token', data.accessToken);
         this.info.next({ email, id });
-        this.route.navigateByUrl('/');
+        this.route.navigateByUrl('/home');
       },
       error: (error) => {
         window.localStorage.removeItem('access-token');
